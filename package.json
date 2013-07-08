@@ -1,0 +1,29 @@
+{
+  "name": "soylent",
+  "version": "0.0.0",
+  "description": "A tool to help manage your own personal soylent escapades",
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "commander": "~1.2.0",
+    "glob": "~3.2.1",
+    "semver": "~2.0.8",
+    "win-fork": "~1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mal/soylent"
+  },
+  "bugs": {
+    "url": "https://github.com/mal/soylent/issues"
+  },
+  "keywords": [
+    "soylent",
+    "nutrition"
+  ],
+  "author": "Mal Graty <mal.graty@googlemail.com>",
+  "license": "MIT"
+}

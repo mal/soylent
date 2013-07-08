@@ -1,0 +1,50 @@
+#! /usr/bin/env node
+
+var program = require('commander')
+  , spawn = require('win-fork');
+
+// program
+
+program
+  .version(require('../package').version)
+  .usage('<command> [options]')
+  .on('--help', function () {
+    console.log('  Commands:');
+    console.log();
+//     console.log('    catalog        manage ingredients');
+//     console.log('    recipe         display and amend recipes');
+    console.log('    stock          manage and check stock levels');
+    process.exit();
+  });
+
+program.parse(process.argv);
+
+// args
+
+var args = process.argv.slice(2)
+  , cmd = args.shift();
+
+if ( ! cmd ) {
+  process.stdout.write(program.helpInformation());
+  program.emit('--help');
+  process.exit();
+}
+
+// sub-command
+
+var bin = 'soylent-' + cmd;
+
+var fs = require('fs')
+  , path = require('path')
+  , local = path.join(__dirname, bin);
+
+if ( fs.existsSync(local) )
+  bin = local;
+
+// spawn
+
+var proc = spawn(bin, args, { stdio: 'inherit' });
+
+proc.on('close', function (code) {
+  process.exit(code);
+});
