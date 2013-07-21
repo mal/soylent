@@ -1,6 +1,7 @@
 # dependencies
 
 path = require 'path'
+math = require './math'
 
 
 # lazy dependencies
@@ -80,7 +81,7 @@ Object.defineProperty File, 'alter',
   value: (key, delta) ->
     @[key] ?= 0
     @[key] += parseFloat delta
-    @[key] = parseFloat @[key].toFixed 12
+    @[key] = math.round @[key]
 
 # add method for saving data file
 Object.defineProperty File, 'save',
