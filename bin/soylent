@@ -12,6 +12,7 @@ program
     console.log('  Commands:');
     console.log();
 //     console.log('    catalog        manage ingredients');
+    console.log('    cost           display cost information');
     console.log('    recipe         display recipe information');
     console.log('    stock          manage and check stock levels');
     process.exit();
