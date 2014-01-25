@@ -1,5 +1,6 @@
 program = require 'commander'
 program.data = require '../util/data'
+display = require '../util/display'
 
 semver = require 'semver'
 
@@ -33,7 +34,7 @@ program
       cheque
 
     # print
-    console.log out
+    console.log display.table out
 
 program
   .parse process.argv

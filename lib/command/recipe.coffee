@@ -1,5 +1,6 @@
 program = require 'commander'
 program.data = require '../util/data'
+display = require '../util/display'
 math = require '../util/math'
 
 semver = require 'semver'
@@ -24,7 +25,7 @@ program
       list[k] = math.round v * ctx.days
 
     # display
-    console.log list
+    console.log display.table list
 
 program
   .parse process.argv

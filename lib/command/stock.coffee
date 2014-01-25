@@ -1,5 +1,6 @@
 program = require 'commander'
 program.data = require '../util/data'
+display = require '../util/display'
 
 semver = require 'semver'
 
@@ -21,7 +22,7 @@ program
     stock.alter product, catalog[product].quantity * ctx.quantity
 
     # save
-    console.log stock
+    console.log display.table stock
     stock.save()
 
 
@@ -50,7 +51,7 @@ program
       days
 
     # print
-    console.log out
+    console.log display.table out
 
 program
   .command('use')
@@ -71,7 +72,7 @@ program
       stock.alter k, -v * ctx.days
 
     # save
-    console.log stock
+    console.log display.table stock
     stock.save()
 
 program
