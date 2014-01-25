@@ -43,7 +43,7 @@ acquire = cache (source) ->
 Data = cache {}
 
 # configure lazy loading of basic data files
-['catalog', 'stock'].forEach (file) ->
+['catalog', 'nutrients', 'stock'].forEach (file) ->
   Object.defineProperty Data, file, get: -> @_cache[file] ||= acquire file
 
 # configure nested lazy load of recipes
