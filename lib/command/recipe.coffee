@@ -1,7 +1,6 @@
 program = require 'commander'
 program.data = require '../util/data'
 display = require '../util/display'
-math = require '../util/math'
 
 semver = require 'semver'
 
@@ -22,10 +21,11 @@ program
     # build list
     list = {}
     for k, v of recipe
-      list[k] = math.round v * ctx.days
+      list[k] = v * ctx.days
 
     # display
-    console.log display.table list
+    console.log display.table list,
+      metadata: catalog
 
 program
   .parse process.argv

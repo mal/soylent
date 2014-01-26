@@ -8,7 +8,8 @@
     "commander": "~1.2.0",
     "glob": "~3.2.1",
     "semver": "~2.0.8",
-    "win-fork": "~1.1.1"
+    "win-fork": "~1.1.1",
+    "si-prefix": "~0.1.0"
   },
   "devDependencies": {},
   "scripts": {

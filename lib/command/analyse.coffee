@@ -14,6 +14,7 @@ program
 
     # load data
     catalog = program.data.catalog
+    nutrients = program.data.nutrients
     recipe = program.data.recipe[ctx.recipe]
 
     # initialise vars
@@ -32,11 +33,9 @@ program
         content[k]).reduce (a, b) -> a + b
 
     # print
-    console.log display.table(
-      [values, makeup],
-      null,
-      program.data.nutrients
-    )
+    console.log display.table [values, makeup],
+      metadata: nutrients
+      head: ['', 'v' + ctx.recipe, 'breakdown']
 
 program
   .parse process.argv
