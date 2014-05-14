@@ -1,10 +1,5 @@
 util = require 'util'
 
-# nuke this once https://github.com/LearnBoost/cli-table/pull/27 hits npm
-HACK = require '../../node_modules/cli-table/lib/cli-table/utils'
-HACK.strlen_old = HACK.strlen
-HACK.strlen = (str) -> HACK.strlen_old((str + '').replace(/\u001b\[(?:\d*;){0,2}\d*m/g, ''))
-
 Table = require 'cli-table'
 si = require 'si-prefix'
 
